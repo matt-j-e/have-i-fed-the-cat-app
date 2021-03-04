@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         breed: DataTypes.STRING,
         markings: DataTypes.STRING,
-        lastFed: DATE
+        lastFed: DataTypes.DATE
     }
 
     return sequelize.define('Cat', schema);

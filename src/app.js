@@ -30,4 +30,9 @@ app.patch('/cats/:catId', (req, res) => {
         .then(rows => res.status(200).json(rows));
 });
 
+app.delete('/cats/:catId', (req, res) => {
+    Cat.destroy({ where: { id: req.params.catId } })
+        .then(rows => res.status(200).json(rows));
+});
+
 module.exports = app;

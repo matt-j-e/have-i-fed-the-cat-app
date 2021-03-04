@@ -6,7 +6,9 @@ const app = express();
 app.use(express.json()); // app-wide middleware
 
 app.post('/cats', (req, res) => {
-    Cat.create(req.body).then(cat => res.status(201).json(cat));
+    Cat.create(req.body)
+        .then(cat => res.status(201).json(cat))
+        .catch(error => res.status(400).json(error));
 });
 
 app.get('/cats', (req, res) => {
